@@ -1,0 +1,25 @@
+//armstrong number
+
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main(){
+    int n,on;
+    cout<<"enter the number to check if the number is armstrong or not"<<endl;
+    cin>>n;
+    on=n;
+    int sum=0;
+    while(n>0){
+        int lastdigit;
+        lastdigit=n%10;
+        sum=sum+pow(lastdigit,3);
+        n=n/10;
+    }
+    if(sum==on){
+        cout<<"armstrong number"<<endl;
+    }
+    else{
+        cout<<"not a armstrong number"<<endl;
+    }
+    return 0;
+}
