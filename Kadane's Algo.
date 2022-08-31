@@ -1,0 +1,24 @@
+// kadanes algo.
+#include<iostream>
+#include<climits>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    int Max=INT_MIN;
+    int current=0;
+    for(int i=0;i<n;i++){
+        current=current+arr[i];
+        if(current>Max){
+            Max=current;
+        }
+        if(current<=0){
+            current =0;
+        }
+    }
+    cout<<Max<<" ";
+}
