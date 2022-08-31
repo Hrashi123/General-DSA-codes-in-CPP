@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int n,m;
+    cin>>n>>m;
+    int arr[n][m];
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            cin>>arr[i][j];       
+        }
+    }
+    // print in spiral shape
+    int s_row=0,e_row=n-1,s_col=0,e_col=m-1;
+    while(s_row<=e_row && s_col<=e_col){
+
+    for(int col=s_col;col<=e_col;col++){
+        cout<<arr[s_row][col]<<" ";
+    }
+    s_row++;
+    cout<<endl;
+    for(int row=s_row;row<=e_row;row++){
+        cout<<arr[row][e_col]<<" ";
+    }
+    e_col--;
+    cout<<endl;
+    for(int col=e_col;col>=s_col;col--){
+        cout<<arr[e_row][col]<<" ";
+    }
+    e_row--;
+    cout<<endl;
+    for(int row=e_row;row>=s_row;row--){
+        cout<<arr[row][s_col]<<" ";
+    }
+    s_col++;
+    cout<<endl;
+}
+}
